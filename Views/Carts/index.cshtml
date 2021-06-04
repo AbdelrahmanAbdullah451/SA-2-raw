@@ -1,0 +1,77 @@
+﻿
+@model IEnumerable<E_Market.Models.Cart>
+@{
+    Layout = "~/Views/Shared/_BootStrap.cshtml";
+}
+
+<div class="row py-3 text-center my-3 bg-light">
+    <div class="col-md-3">
+        <h4>Product Name</h4>
+    </div>
+
+    <div class="col-md-3">
+        <h5 class="font-italic">Price</h5>
+    </div>
+    <div class="col-md-3">
+        <h4 class="font-italic">Time added</h4>
+    </div>
+</div>
+@foreach (var item in Model)
+{
+
+    <div class="row justify-content-center text-center my-3 bg-light">
+        <div class="col-md-3">
+            <h4>@Html.DisplayFor(modelItem => item.Product.name)</h4>
+        </div>
+
+        <div class="col-md-3">
+            <h5 class="font-italic">  @Html.DisplayFor(modelItem => item.Product.price) $</h5>
+        </div>
+        <div class="col-md-3">
+            <h4 class="font-italic">@Html.DisplayFor(modelItem => item.added_at)</h4>
+        </div>
+        <div class="col-md-3">
+            <a class="btn btn-danger" href="@Url.Action("RemoveItem" , new { id = item.product_id })">Remove</a>
+        </div>
+    </div>
+
+}
+
+<div class="row justify-content-end">
+    <div class="col-md-3">
+        <a class="btn btn-primary" href="@Url.Action("index" , "Products")">Back To Products</a>
+    </div>
+</div>
+
+@*@model IEnumerable<E_Market.Models.Cart>
+
+    @foreach (var item in Model)
+    {
+        <div class="cartItem" style=" background:#f9f9f9;
+                border:1px solid #222;
+                color:#222;
+                margin:10px;
+                overflow:hidden">
+            <div style="float: left;
+                            width: 25%;
+                            height: 100%;
+                            background: #ddd;
+                            padding: 20px 10px;
+                            margin-right: 10px;
+                            font-size: 21px;
+                            border: 1px solid;">
+                @Html.ActionLink("Remove", "RemoveItem", new { id = item.product_id })
+            </div>
+            <div style="float: left;
+                        text-align: center;
+                        width: 72%;
+                        margin: 0;
+                        line-height: 25px;
+                        padding-top: 10px;">
+                <span style="font-size: 18px;letter-spacing: 1px;">@Html.DisplayFor(modelItem => item.Product.name) - </span>
+                <span style="font-size: 18px;letter-spacing: 1px;">@Html.DisplayFor(modelItem => item.Product.price)</span>
+                <p style="font-size: 18px;letter-spacing: 1px;">@Html.DisplayFor(modelItem => item.added_at)</p>
+            </div>
+        </div>
+    }*@
+
