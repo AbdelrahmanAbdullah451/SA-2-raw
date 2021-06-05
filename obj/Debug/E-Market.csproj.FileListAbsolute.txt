@@ -408,3 +408,5 @@ C:\Users\abdon\Documents\GitHub\SA-2-Meta\obj\Debug\E-Market.csproj.CopyComplete
 C:\Users\abdon\Documents\GitHub\SA-2-Meta\obj\Debug\E-Market.dll
 C:\Users\abdon\Documents\GitHub\SA-2-Meta\obj\Debug\E-Market.pdb
 C:\Users\abdon\Documents\GitHub\SA-2-Meta\obj\Debug\E-Market.csprojAssemblyReference.cache
+C:\Users\abdon\Documents\GitHub\SA-2-Meta\bin\logger.dll
+C:\Users\abdon\Documents\GitHub\SA-2-Meta\bin\logger.pdb

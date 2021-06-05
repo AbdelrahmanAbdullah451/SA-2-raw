@@ -248,7 +248,12 @@
     <Content Include="Views\Shared\_BootStrap.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\logger\logger.csproj">
+      <Project>{7C52661A-0190-4431-B901-16FAC2E7553D}</Project>
+      <Name>logger</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

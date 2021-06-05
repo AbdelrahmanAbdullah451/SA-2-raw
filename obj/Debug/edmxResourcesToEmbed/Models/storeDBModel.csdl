@@ -14,8 +14,8 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="price" Type="Double" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="price" Type="Double" Nullable="false" />
     <Property Name="image" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
     <Property Name="category_id" Type="Int32" />

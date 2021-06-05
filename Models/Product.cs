@@ -16,7 +16,7 @@ namespace E_Market.Models
     {
         public int Id { get; set; }
         public string name { get; set; }
-        public Nullable<double> price { get; set; }
+        public double price { get; set; }
         public string image { get; set; }
         public string description { get; set; }
         public Nullable<int> category_id { get; set; }

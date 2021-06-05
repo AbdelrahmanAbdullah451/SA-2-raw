@@ -1,27 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using logger;
 using E_Market.Models;
-
 using System.IO;
 namespace E_Market.Controllers
 {
 
 
-
-
-
     public class ProductsController : Controller
     {
 
+        private iLog _ILog;
 
         private storeEntities db = new storeEntities();
-
+        public ProductsController()
+        {
+            _ILog = Log.GetInstance;
+        }
+        protected override void OnException(ExceptionContext filterContext)
+        {
+            _ILog.LogException(filterContext.Exception.ToString());
+            filterContext.ExceptionHandled = true;
+            this.View("Error").ExecuteResult(this.ControllerContext);
+        }
         // GET: Products
         public ActionResult Index()
         {
