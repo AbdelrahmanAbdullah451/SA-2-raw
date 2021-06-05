@@ -249,6 +249,10 @@
     <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\classes\classes.csproj">
+      <Project>{ABF7909E-C021-490D-A36D-109374D1E66C}</Project>
+      <Name>classes</Name>
+    </ProjectReference>
     <ProjectReference Include="..\logger\logger.csproj">
       <Project>{7C52661A-0190-4431-B901-16FAC2E7553D}</Project>
       <Name>logger</Name>

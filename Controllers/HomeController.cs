@@ -1,4 +1,6 @@
 ﻿using E_Market.Models;
+using E_Market.Products;
+using E_Market.Subject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +11,18 @@ namespace E_Market.Controllers
 {
     public class HomeController : Controller
     {
+        private ISubject _ISubject;
+        private IObserver _IObserver;
         private storeEntities db = new storeEntities();
+        public HomeController()
+        {
+            String productName = "samsung";
+            float productPrice = 1200;
+            String avail = "Available";
+            String userName = "abdo";
+            Subjects sub = new Subjects(productName,productPrice, avail);
+            Observer ob = new Observer(userName , sub);
+        }
         public ActionResult Index()
         {
             if (Session["username"] != null)
