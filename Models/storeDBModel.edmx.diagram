@@ -10,6 +10,7 @@
         <AssociationConnector Association="storeModel.FK__Product__categor__25869641" ManuallyRouted="false" />
         <EntityTypeShape EntityType="storeModel.Cart" Width="1.5" PointX="5.25" PointY="1.5" />
         <AssociationConnector Association="storeModel.FK__Cart__product_id__276EDEB3" />
+        <EntityTypeShape EntityType="storeModel.User" Width="1.5" PointX="0.75" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

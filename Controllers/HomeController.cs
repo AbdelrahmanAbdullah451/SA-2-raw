@@ -1,4 +1,5 @@
-﻿using System;
+﻿using E_Market.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +9,17 @@ namespace E_Market.Controllers
 {
     public class HomeController : Controller
     {
+        private storeEntities db = new storeEntities();
         public ActionResult Index()
         {
-            return View();
+            if (Session["username"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login");
+            }
         }
 
         public ActionResult About()
@@ -25,6 +34,26 @@ namespace E_Market.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+        public ActionResult Login()
+        {
+            Session["username"] = null;
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Login([Bind(Include = "username,password")]User user)
+        {
+            var rec = db.Users.Where(x => x.username == user.username & x.password == user.password).ToList().FirstOrDefault();
+            if (rec != null)
+            {
+                Session["username"] = rec.username;
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                ViewBag.error = "Invalid User";
+                return View(user);
+            }
         }
     }
 }

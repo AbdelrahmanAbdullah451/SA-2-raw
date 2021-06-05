@@ -46,6 +46,7 @@
       <End Role="Product" EntitySet="Products" />
       <End Role="Cart" EntitySet="Carts" />
     </AssociationSet>
+    <EntitySet Name="Users" EntityType="storeModel.User" />
   </EntityContainer>
   <EntityType Name="Cart">
     <Key>
@@ -67,4 +68,14 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nProductBought" Type="Int32" Nullable="false" />
+  </EntityType>
 </Schema>

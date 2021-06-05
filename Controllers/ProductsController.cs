@@ -26,7 +26,14 @@ namespace E_Market.Controllers
         public ActionResult Index()
         {
             var products = db.Products.Include(p => p.Category);
-            return View(products.ToList());
+            if (Session["username"] != null)
+            {
+                return View(products.ToList());
+            }
+            else
+            {
+                return RedirectToAction("Login", "Home", new { area = "" });
+            }
         }
 
         public JsonResult CategoryName(string term)
@@ -70,7 +77,14 @@ namespace E_Market.Controllers
         public ActionResult Create()
         {
             ViewBag.category_id = new SelectList(db.Categories, "Id", "name");
-            return View();
+            if (Session["username"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Home", new { area = "" });
+            }
         }
 
         // POST: Products/Create
@@ -97,7 +111,14 @@ namespace E_Market.Controllers
             }
 
             ViewBag.category_id = new SelectList(db.Categories, "Id", "name", product.category_id);
-            return View(product);
+            if (Session["username"] != null)
+            {
+                return View(product);
+            }
+            else
+            {
+                return RedirectToAction("Login", "Home", new { area = "" });
+            }
         }
 
         // GET: Products/Edit/5

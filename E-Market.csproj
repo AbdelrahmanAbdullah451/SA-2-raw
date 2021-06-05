@@ -158,6 +158,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>storeDBModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>storeDBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -243,6 +246,7 @@
     <Content Include="Views\Shared\index.cshtml" />
     <Content Include="Views\Carts\index.cshtml" />
     <Content Include="Views\Shared\_BootStrap.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
